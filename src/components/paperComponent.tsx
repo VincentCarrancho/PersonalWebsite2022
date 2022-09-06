@@ -1,17 +1,18 @@
 import React from "react";
-import { Typography, Divider, Paper } from "@mui/material";
+import { Typography, Divider, Paper, Card } from "@mui/material";
 
-function PaperComponent({ children }: any, props: any) {
+type Props = {
+  title: string,
+  children?: React.ReactNode,
+}
+/**
+ * This is to construct a paper component for the about pages.
+ */
+function PaperComponent({ title, children }: Props) {
   return (
     <Paper
-      sx={
-        {
-          // TODO: Figure out how to do a glass morphism effect.
-          // TODO: Pass props for colors.
-        }
-      }
     >
-      <Typography variant="h3">{props.title}</Typography>
+      <Typography variant="h3">{title}</Typography>
       <Divider variant="middle" />
       <div>{children}</div>
     </Paper>
